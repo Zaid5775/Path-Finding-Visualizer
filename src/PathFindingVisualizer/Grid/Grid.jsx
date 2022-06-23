@@ -18,11 +18,11 @@ export default class Grid extends Component {
     };
     this.nodes = [];
     this.grid = [];
-    this.rows = 20;
+    this.rows = 24;
     this.cols = 50;
     this.speed = 15;
-    this.startNode = { row: 10, col: 15 };
-    this.finishNode = { row: 10, col: 35 };
+    this.startNode = { row: 12, col: 15 };
+    this.finishNode = { row: 12, col: 35 };
     this.algorithms = [];
     this.selectedAlgorithm = "Dijkstra";
     this.props.registerGrid(this);

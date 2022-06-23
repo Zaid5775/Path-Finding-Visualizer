@@ -13,15 +13,16 @@
 }
 
 .node-finish {
-  background-image: url("../assets/finish-node.png");
+  background-image: url("../assets/end.png");
   background-position: center;
   background-size: cover;
 }
 
 .node-start {
-  background-image: url("../assets/start-node.png");
+  background-image: url("../assets/start.png");
   background-position: center;
   background-size: cover;
+  
 }
 
 .node-visited {
