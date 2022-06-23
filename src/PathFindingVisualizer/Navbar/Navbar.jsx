@@ -41,24 +41,7 @@ class Navbar extends Component {
           <MDBNavbarToggler onClick={this.toggleCollapse} />
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
             <MDBNavbarNav right>
-              <MDBNavItem>
-                <MDBNavLink className="waves-effect waves-light" to ="https://www.linkedin.com/in/zaid-shaikh-a59aa9215/">
-                  <MDBIcon fab icon="linkedin" />
-                </MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink className="waves-effect waves-light" to="https://twitter.com/knoxzaid1/">
-                  <MDBIcon fab icon="twitter" />
-                </MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink
-                  className="waves-effect waves-light"
-                  to="https://github.com/Zaid5775"
-                >
-                  <MDBIcon fab icon="github" />
-                </MDBNavLink>
-              </MDBNavItem>
+              
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>
