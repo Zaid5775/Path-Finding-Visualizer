@@ -7,6 +7,7 @@ import { dijkstra, getNodesInShortestPathOrder } from "../algorithms/dijkstra";
 import dfs from "../algorithms/dfs";
 import bfs from "../algorithms/bfs";
 import aStar from "../algorithms/aStar";
+
 import randomObstruction from "../algorithms/randomObstruction";
 import randomConnection from "../algorithms/randomConnection";
 
@@ -42,6 +43,9 @@ export default class Grid extends Component {
     this.mazeNodes = [];
     this.isVisualizing = false;
     this.canDrawMaze = true;
+    this.sortedFvalue=[];
+    this.sortedHeuristic=[];
+   
   }
 
   //Init
@@ -336,13 +340,17 @@ export default class Grid extends Component {
     }
     if (this.selectedAlgorithm === "Dijkstra") {
       this.visualizeDijkstra();
-    } else if (this.selectedAlgorithm === "DFS") {
+    } 
+    else if (this.selectedAlgorithm === "DFS") {
       this.visualizeDFS();
-    } else if (this.selectedAlgorithm === "BFS") {
-      this.visualizeBFS();
-    } else if (this.selectedAlgorithm === "A*") {
-      this.visualizeAStar();
     }
+     else if (this.selectedAlgorithm === "BFS") {
+      this.visualizeBFS();
+    } 
+    else if (this.selectedAlgorithm === "A*") {
+      this.visualizeAStar();
+    } 
+  
   }
 
   visualizeDijkstra() {
@@ -385,6 +393,19 @@ export default class Grid extends Component {
   }
 
   visualizeAStar() {
+    const grid = this.grid;
+    const startNode = grid[this.startNode.row][this.startNode.col];
+    const finishNode = grid[this.finishNode.row][this.finishNode.col];
+    const visitedNodesInOrder = aStar(this.grid, startNode, finishNode);
+    const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
+    this.visitedNodesInOrder = visitedNodesInOrder;
+    this.nodesInShortestPathOrder = nodesInShortestPathOrder;
+    this.visitedNodesInOrderCurrentIndex = 0;
+    this.nodesInShortestPathOrderCurrentIndex = 0;
+    this.animate(visitedNodesInOrder, 0, nodesInShortestPathOrder, 0);
+  }
+
+  visulizeGreedy(){
     const grid = this.grid;
     const startNode = grid[this.startNode.row][this.startNode.col];
     const finishNode = grid[this.finishNode.row][this.finishNode.col];

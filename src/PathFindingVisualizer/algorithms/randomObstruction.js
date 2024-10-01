@@ -5,7 +5,7 @@ export default function randomObstruction(grid) {
   let i = 0;
   while (i < 1000) {
     walls.push(nodes[i]);
-    i = i + Math.floor(Math.random() * 5 + 1);
+    i = i + Math.floor(Math.random() * 5 + 2);
   }
   return walls;
 }

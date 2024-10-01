@@ -4,7 +4,7 @@ export default function randomConnection(grid) {
   for (const row of grid) for (const node of row) nodes.push(node);
   let i = 0;
   let j = 0;
-  while (i < 20) {
+  while (i < 24) {
     j = 0;
     while (j < 50) {
       walls.push(grid[i][j]);

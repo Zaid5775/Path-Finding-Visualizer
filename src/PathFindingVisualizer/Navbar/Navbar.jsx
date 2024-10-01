@@ -41,7 +41,7 @@ class Navbar extends Component {
           <MDBNavbarToggler onClick={this.toggleCollapse} />
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
             <MDBNavbarNav right>
-              
+
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>
